@@ -36,7 +36,6 @@ app_server <- function(input, output, session) {
 
 # Login Validation  -------------------------------------------------------
 
-
   observeEvent(input$login_btn, {
     req(input$username)
     req(input$password)

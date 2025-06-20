@@ -10,7 +10,8 @@ df = pd.read_csv("Data.csv")
 
 def pull_data(request_numb):
     user_request = df[df["Request"] == request_numb]
-    output_data = user_request["Data"]
+    output_data = [user_request["Data"], user_request["NewData"]]
+    
     return output_data
 
 @app.route("/post_request", methods = ["POST"])
@@ -32,3 +33,5 @@ def get_data():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port = 4499)
+
+
